@@ -5,7 +5,7 @@ var int;
 function start(){  
     clock();//立即执行 
     clearInterval(int);//防止多次点击开始，闪动加速
-    int =setInterval(clock, 300000);//没1000毫秒执行一次
+    int =setInterval(clock, 1000);//没1000毫秒执行一次
 }//开始按钮
 
 function bg(){
@@ -24,10 +24,7 @@ function clock(){
         divarr[x].style.backgroundColor=bg();
         divarr[y].style.backgroundColor=bg();
         divarr[z].style.backgroundColor=bg();
-        console.log(x);
-        console.log(y);
-        console.log(z);
-    }
+    }//避免重复
     
     else{
         clock();
