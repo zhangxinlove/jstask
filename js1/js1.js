@@ -5,11 +5,11 @@ var int;
 function start(){  
     clock();//立即执行 
     clearInterval(int);//防止多次点击开始，闪动加速
-    int =setInterval(clock, 1000);//没1000毫秒执行一次
+    int =setInterval(clock, 300000);//没1000毫秒执行一次
 }//开始按钮
 
 function bg(){
-    return '#'+Math.floor(Math.random()*0xffffff).toString(16);
+    return '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).substr(-6);
 }//随机取颜色
 
 function clock(){
@@ -19,11 +19,16 @@ function clock(){
     var x=Math.floor(Math.random()*9);
     var y=Math.floor(Math.random()*9);
     var z=Math.floor(Math.random()*9);
+   
     if (x!=y&&x!=z&&y!=z){
         divarr[x].style.backgroundColor=bg();
         divarr[y].style.backgroundColor=bg();
         divarr[z].style.backgroundColor=bg();
+        console.log(x);
+        console.log(y);
+        console.log(z);
     }
+    
     else{
         clock();
     }
