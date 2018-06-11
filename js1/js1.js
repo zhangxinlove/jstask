@@ -9,7 +9,7 @@ function start(){
 }//开始按钮
 
 function bg(){
-    return '#'+Math.floor(Math.random()*0x1000000).toString(16);
+    return '#'+Math.floor(Math.random()*0xffffff).toString(16);
 }//随机取颜色
 
 function clock(){
