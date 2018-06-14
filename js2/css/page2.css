@@ -1,0 +1,47 @@
+body{
+    margin:0;
+    background:#f0f0f0;
+    min-width:320px;
+}
+header{
+    background: #29bde0;
+    height:45px;
+} 
+main,.search{
+    width:90%;
+    margin:20px auto;
+    text-align:center;    
+    background:#fff;
+    border:1px solid #C9C9C9;
+}  
+.search{
+    color:#9a9a9a;
+    font-size:17px;
+}
+.title{
+    color:#fbb435;
+    font-size:18px;
+    border-bottom:2px solid #fdd793;    
+}
+.mode{
+    color:#fff;
+    font-size:16px;
+    width:90%;
+    margin:15px auto;
+    padding:20px 0;
+    background:#69d1e9;
+}
+.peoples{
+    color:#787878;
+    font-size:12px;
+}
+.dot span{
+    display:inline-block;
+    width:9px;
+    height:9px;
+    background:#f0f0f0;
+    border-radius:50%;
+}
+span.dot1{
+    background:#69d1e9;
+}
