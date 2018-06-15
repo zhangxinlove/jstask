@@ -3,11 +3,11 @@ body{
     background:#f0f0f0;
     min-width:320px;
     overflow: hidden;
+    
 }
 header{
     background: #29bde0;
     height:45px;
-    width:100%;
 } 
 .wrap{
     position:absolute;
