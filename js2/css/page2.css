@@ -2,8 +2,7 @@ body{
     margin:0;
     background:#f0f0f0;
     min-width:320px;
-    overflow: hidden;
-    
+    overflow: hidden;   
 }
 header{
     background: #29bde0;
@@ -28,10 +27,11 @@ header{
     left:0; 
     background: #fff;
     height:100vh;
-    border-right:5px solid #29bde0;
+    box-shadow:0 0 5px inset;
 }
 #sidemenu:checked ~.search,#sidemenu:checked ~ main {
-    left:80vw;     
+    left:80vw;   
+    overflow: hidden;  
 }
 aside{
     position: absolute;
