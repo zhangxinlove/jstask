@@ -8,31 +8,38 @@
     <title>首页</title>
 </head>
 <body>
-    <header>  
+    <header>   
     </header>
+    <div class='wrap'>
+        <label for='sidemenu'>≡</label>
+    </div>
+    <input type='checkbox' id='sidemenu'>  
+    <aside>
+        <ul>
+            <li>公告</li>
+            <li>设置</li>
+            <li>帮助</li>
+            <li>关于</li>
+        </ul>
+    </aside>
     <div class="search">
         <p>上次游戏：捉鬼猜词版</p>
+        <img src="img/2-icon.png" alt="返回" >        
     </div>
     <main>
         <div class="title">
             <p>捉鬼游戏</p>
         </div>
         <div class="game1">
-            <a href="">
-                <p class="mode">简单版</p>
-            </a>
-            <p class="peoples">有1133个用户正在玩此款游戏</p>
+            <button onclick="nextpage()">简单版</button>
+            <p class="peoples">有1133个用户正在玩此款游戏</button>
         </div>
         <div class="geme2">
-            <a href="">
-                <p class="mode">猜词版</p>
-            </a>
+            <button onclick="nextpage()">猜词版</button>
             <p class="peoples">有1133个用户正在玩此款游戏</p>
         </div>
         <div class="game3">
-            <a href="">
-                <p class="mode">白痴版</p>
-            </a>
+            <button onclick="nextpage()">白痴版</button>
             <p class="peoples">有1133个用户正在玩此款游戏</p>
         </div>
         <div class="dot">
@@ -41,6 +48,7 @@
             <span></span>
             <span></span>
         </div>
+            <img src="img/2-sanjiao.png" alt="下一页" >        
     </main>
     <script type="text/javascript" src="js/page2.js" ></script>
 </body>
