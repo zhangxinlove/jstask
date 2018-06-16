@@ -1,8 +1,6 @@
 body{
     margin:0;
-    background:#f0f0f0;
     min-width:320px;
-    height:100%;
     overflow: hidden;   
 }
 header{
@@ -30,8 +28,8 @@ header{
     height:100vh;
     box-shadow:0 0 5px inset;
 }
-#sidemenu:checked ~.search,#sidemenu:checked ~ main {
-    left:80vw;   
+#sidemenu:checked ~ main{
+    margin-left:80vw;   
     overflow: hidden;  
 }
 aside{
@@ -52,7 +50,12 @@ li{
     padding:13px 20px;
     border-bottom: 1px solid #D6D6D6;
 }
-main,.search{
+main{
+    background:#f0f0f0;
+    transition: .5s ease-out;
+    width:100%;
+}
+.game,.search{
     width:90%;
     margin:25px auto;
     text-align:center;    
@@ -60,7 +63,6 @@ main,.search{
     border:1px solid #C9C9C9;
     position: relative; 
     left:0;  
-    transition: .5s ease-out; 
     box-sizing: border-box;
 }  
 .search{
