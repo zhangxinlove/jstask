@@ -1,6 +1,6 @@
 body{
     margin:0;
-    min-width:320px;
+    min-width:;
     overflow: hidden;   
 }
 header{
@@ -29,7 +29,8 @@ header{
     box-shadow:0 0 5px inset;
 }
 #sidemenu:checked ~ main{
-    margin-left:80vw;    
+    margin-left:80vw;   
+ 
 }
 aside{
     position: absolute;
