@@ -29,8 +29,7 @@ header{
     box-shadow:0 0 5px inset;
 }
 #sidemenu:checked ~ main{
-    margin-left:80vw;   
-    overflow: hidden;  
+    margin-left:80vw;    
 }
 aside{
     position: absolute;
@@ -54,6 +53,7 @@ main{
     background:#f0f0f0;
     transition: .5s ease-out;
     width:100%;
+    overflow: hidden;
 }
 .game,.search{
     width:90%;
@@ -61,9 +61,7 @@ main{
     text-align:center;    
     background:#fff;
     border:1px solid #C9C9C9;
-    position: relative; 
-    left:0;  
-    box-sizing: border-box;
+    position: relative;  
 }  
 .search{
     color:#9a9a9a;
