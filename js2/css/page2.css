@@ -2,6 +2,7 @@ body{
     margin:0;
     background:#f0f0f0;
     min-width:320px;
+    height:100%;
     overflow: hidden;   
 }
 header{
