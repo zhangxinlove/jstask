@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/page3.css">
+    <title>参数设置</title>
 </head>
 <body>
-    page3
+<header>
+    <img class="h-i1" src="img/2-back.png" onclick="back()" >
+    参数设置
+    <img class="h-i2" src="img/3-help.png" onclick="help()">
+</header>
+<main>
+    <div class="main-t">
+        <div class="side">
+            玩家配比
+        </div>
+        <div class="peoples"></div>
+        
+        <div class="set">
+            点击设置<img src="img/3-pen.png">
+        </div>
+    </div>
+
+    <div class="main-m">
+        <input type="text" placeholder="水民词组">
+        <input type="text" placeholder="幽灵词组">
+    </div>
+    <div class="main-b">
+        <div class="mb-t">
+            玩家人数<input type="text" id="players" onchange="InputValue()" value="4" >人
+        </div>
+        <div class="mb-b">
+            <button id="reduce" onclick="reduceNum()" >
+                <span>-</span>
+            </button> 
+            <input type="range" id="thumb" min="4" max="18" value="4" oninput="rangeValue()" >
+            <button id="add" onclick="addNum()" >
+                <span>+</span>
+            </button>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="js/page3.js"></script>
 </body>
 </html>
