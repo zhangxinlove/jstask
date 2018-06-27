@@ -4,8 +4,8 @@ var divarr=document.getElementsByClassName("box");
 var int;
 function start(){  
     clock();//立即执行 
-    clearInterval(int);//防止多次点击开始，闪动加速
-    int =setInterval(clock, 1000);//没1000毫秒执行一次
+    clearInterval(int);//防止多次点击开始，闪动加/速
+    int =setInterval(clock, 1000);//每1000毫秒执行一次
 }//开始按钮
 
 function bg(){

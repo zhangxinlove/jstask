@@ -18,16 +18,18 @@
         <div class="side">
             玩家配比
         </div>
-        <div class="peoples"></div>
-        
-        <div class="set">
+        <div class="peoples">
+            <ul class="identity" id="identity">
+            </ul>
+        </div>          
+        <div class="set" onclick="setGame()" >
             点击设置<img src="img/3-pen.png">
         </div>
     </div>
 
     <div class="main-m">
-        <input type="text" placeholder="水民词组">
-        <input type="text" placeholder="幽灵词组">
+        <input type="text" id="ciworld" placeholder="平民词组">
+        <input type="text" id="kiworld" placeholder="杀手词组">
     </div>
     <div class="main-b">
         <div class="mb-t">
@@ -44,6 +46,7 @@
         </div>
     </div>
 </main>
+<button class="play" id="playgame" onclick="play()" >去发牌</button>
 <script type="text/javascript" src="js/page3.js"></script>
 </body>
 </html>
