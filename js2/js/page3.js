@@ -91,8 +91,8 @@ function setGame(){
 //   }
    
 }
-var ciworld=document.getElementById("ciworld");
-var kiworld=document.getElementById("kiworld");
+var ciworld=document.getElementById("ciword");
+var kiworld=document.getElementById("kiword");
 
 function play(){
     if (
@@ -100,7 +100,12 @@ function play(){
         ciworld.value != "" &&
         kiworld.value != "" 
     ){
-        location.assign("page4.html")
+        sessionStorage.Num=inputNum.value;
+        // sessionStorage.setItem("Num", inputNum.value);
+        sessionStorage.playArr=JSON.stringify(playersArr);
+        sessionStorage.ciword=ciword.value;
+        sessionStorage.kiword=kiword.value;
+        location.href="page4.html";
     }else if (playersArr.length==0 ){
         alert("请设置玩家数量")
     }else if (ciworld.value =="" ){
