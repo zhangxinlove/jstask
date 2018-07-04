@@ -20,9 +20,42 @@ main,footer{
 main{
     min-height:100vh;
     margin: 0 auto;
-    padding: .8rem 0 1rem;
+    padding: 45px 0 1rem;
     overflow: hidden;
 }
+.main-t{
+    line-height: 0;
+}
+.mtt{
+    display: flex;
+    align-items: center;
+    height: 0.45rem;
+    margin: 0;
+    padding-left: 25px;
+    font-size: 0.13rem;
+    line-height: 1.5;
+    background: #b9e9f5;
+}
+.mtb{
+    position: relative;
+    margin: 0;
+    padding: 15px 0;
+    font-size: 0.12rem;
+    color: #fff;
+    padding-left: 40px;
+    line-height: 1.5;
+}
+.jiao{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width:0;
+    height:0;
+    border-width: 10px 10px 0 10px ;
+    border-style: solid;
+    border-color: #b9e9f5 transparent transparent transparent;/*透明 兰 透明 透明 */
+} 
+
 .player{
     float: left;
     width: 20vw;
