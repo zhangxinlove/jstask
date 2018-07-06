@@ -55,7 +55,9 @@ main{
     border-style: solid;
     border-color: #b9e9f5 transparent transparent transparent;/*透明 兰 透明 透明 */
 } 
-
+.play-box{
+    overflow: hidden;
+}
 .player{
     float: left;
     width: 20vw;

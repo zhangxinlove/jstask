@@ -39,6 +39,7 @@ var playersArr=new Array();//新建角色身份数组
 function role(){
     playersArr=[];
     var killer= Math.floor(inputNum.value/3);//杀手人数
+    sessionStorage.kiNum = killer;
     for (var i=0;i<killer;i++ ){
         playersArr[i]="杀手";
     }
