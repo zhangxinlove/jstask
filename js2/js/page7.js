@@ -9,6 +9,7 @@ var ciNum = sessionStorage.getItem('ciNum'); //平民人数
 var deadArr = JSON.parse(sessionStorage.getItem("deadArr")); //死亡玩家数组    这里换个页面寸 这里要取出数组
 var identity; //选中身份
 var n; //选中的玩家数组角标
+var y = sessionStorage.getItem('y')*1; //天数
 
 var playbox = $('.play-box');
 for (var i = 0; i < Num; i++) {
@@ -106,10 +107,15 @@ function vote() { //投票页面执行
     })
 } //玩家投票
 
+
+
 $('#playgame').on('click', function () {
+    var noteArr = JSON.parse(sessionStorage.getItem("noteArr")); //法官笔记
+    var cixuhao = sessionStorage.getItem('cixuhao') * 1
     switch (x) {
         case '杀人':
-            ciNum = ciNum - 1; //平民减少一人         
+            ciNum = ciNum - 1; //平民减少一人   
+            noteArr.push('第' + (y + 1) + '天晚上：' + (cixuhao + 1) + "号玩家被杀手杀死，" + (cixuhao + 1) + "号玩家的身份是平民。")
             break;
         case "投票":
             if (identity == "杀手") {
@@ -117,11 +123,13 @@ $('#playgame').on('click', function () {
             } else if (identity == "平民") {
                 ciNum = ciNum - 1; //平民减少一人
             }
+            noteArr.push('第' + (y + 1) + '天白天：' + (cixuhao + 1) + "号玩家被投死，" + (cixuhao + 1) + "号玩家的身份是" + playArr[cixuhao])
             break;
     }
+    sessionStorage.noteArr = JSON.stringify(noteArr);
     deadArr.push(n);
-    sessionStorage.deadArr=JSON.stringify(deadArr);
-    sessionStorage.cixuhao= n;
+    sessionStorage.deadArr = JSON.stringify(deadArr);
+    sessionStorage.cixuhao = n;
     sessionStorage.ciNum = ciNum;
     sessionStorage.kiNum = kiNum;
     gameover();
@@ -129,9 +137,13 @@ $('#playgame').on('click', function () {
 
 function gameover() {
     if (kiNum <= 0) {
+        sessionStorage.end = "平民胜利";
         alert('平民胜利');
+        location.assign('page8.html')
     } else if (kiNum >= ciNum) {
+        sessionStorage.end = "杀手胜利";
         alert('杀手胜利');
+        location.assign('page8.html')
     } else {
         location.assign('page6.html');
     }

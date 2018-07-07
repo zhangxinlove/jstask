@@ -59,6 +59,9 @@ html{
 .sun{
     top: 110px;
 }
+#record1,#record2{
+    background: #ccc;
+}
 footer{
     position: fixed;
     display: flex;

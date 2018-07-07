@@ -33,6 +33,7 @@ $('#playgame').on('click',function(){
     sessionStorage.removeItem("y");//重置游戏天数
     var deadArr = new Array; //死亡玩家数组
     sessionStorage.deadArr=JSON.stringify(deadArr);
-
+    var noteArr = new Array; //法官笔记
+    sessionStorage.noteArr=JSON.stringify(noteArr);
     location.assign('page6.html');
 });
