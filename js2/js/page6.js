@@ -87,4 +87,6 @@ function close() {
         location.replace('page2.html'); //返回首页
     }
 }
-
+$('#note').on('click',function(){
+    location.assign('page9.html');
+})
