@@ -9,7 +9,8 @@ var ciNum = sessionStorage.getItem('ciNum'); //平民人数
 var deadArr = JSON.parse(sessionStorage.getItem("deadArr")); //死亡玩家数组    这里换个页面寸 这里要取出数组
 var identity; //选中身份
 var n; //选中的玩家数组角标
-var y = sessionStorage.getItem('y')*1; //天数
+var y = sessionStorage.getItem('y') * 1; //天数
+var chooseNum = 0;
 
 var playbox = $('.play-box');
 for (var i = 0; i < Num; i++) {
@@ -68,11 +69,15 @@ function kill() { //杀人页面执行
                 }
                 bgcolor();
                 console.log('玩家数组角标：' + n);
-                if (target.innerText.substring(0, 2) == "杀手") {
-                    alert("你瞅啥？你想咋地？"); //杀手不能杀杀手
-                } else {
-                    bgcolor();
-                    playerArr[n].style.background = "red"; //点击的平民变色
+                if (playerArr[n].style.background != "red") {
+                    if (target.innerText.substring(0, 2) == "杀手") {
+                        alert("你瞅啥？你想咋地？"); //杀手不能杀杀手
+                    } else {
+                        bgcolor();
+                        playerArr[n].style.background = "red"; //点击的平民变色
+                    }
+                }else{
+                    alert('请不要重复点击');
                 }
                 break;
             }
@@ -94,11 +99,15 @@ function vote() { //投票页面执行
                 }
                 bgcolor();
                 console.log('玩家数组角标：' + n);
-                playerArr[n].style.background = "red"; //点击的平民变色
-                if (target.innerText.substring(0, 2) == "杀手") {
-                    identity = "杀手";
-                } else if (target.innerText.substring(0, 2) == "平民") {
-                    identity = "平民";
+                if (playerArr[n].style.background != "red") {
+                    playerArr[n].style.background = "red"; //点击的平民变色
+                    if (target.innerText.substring(0, 2) == "杀手") {
+                        identity = "杀手";
+                    } else if (target.innerText.substring(0, 2) == "平民") {
+                        identity = "平民";
+                    }
+                } else {
+                    alert('请不要重复点击');
                 }
                 break;
             }
@@ -107,33 +116,44 @@ function vote() { //投票页面执行
     })
 } //玩家投票
 
-
-
 $('#playgame').on('click', function () {
-    var noteArr = JSON.parse(sessionStorage.getItem("noteArr")); //法官笔记
-    var cixuhao = sessionStorage.getItem('cixuhao') * 1
-    switch (x) {
-        case '杀人':
-            ciNum = ciNum - 1; //平民减少一人   
-            noteArr.push('第' + (y + 1) + '天晚上：' + (cixuhao + 1) + "号玩家被杀手杀死，" + (cixuhao + 1) + "号玩家的身份是平民。")
-            break;
-        case "投票":
-            if (identity == "杀手") {
-                kiNum = kiNum - 1; //杀手减少一人             
-            } else if (identity == "平民") {
-                ciNum = ciNum - 1; //平民减少一人
-            }
-            noteArr.push('第' + (y + 1) + '天白天：' + (cixuhao + 1) + "号玩家被投死，" + (cixuhao + 1) + "号玩家的身份是" + playArr[cixuhao])
-            break;
+    choose();
+    if (chooseNum > deadArr.length) {
+        var noteArr = JSON.parse(sessionStorage.getItem("noteArr")); //法官笔记
+        var cixuhao = sessionStorage.getItem('cixuhao') * 1
+        switch (x) {
+            case '杀人':
+                ciNum = ciNum - 1; //平民减少一人   
+                noteArr.push('第' + (y + 1) + '天晚上：' + (cixuhao + 1) + "号玩家被杀手杀死，" + (cixuhao + 1) + "号玩家的身份是平民。")
+                break;
+            case "投票":
+                if (identity == "杀手") {
+                    kiNum = kiNum - 1; //杀手减少一人             
+                } else if (identity == "平民") {
+                    ciNum = ciNum - 1; //平民减少一人
+                }
+                noteArr.push('第' + (y + 1) + '天白天：' + (cixuhao + 1) + "号玩家被投死，" + (cixuhao + 1) + "号玩家的身份是" + playArr[cixuhao])
+                break;
+        }
+        sessionStorage.noteArr = JSON.stringify(noteArr);
+        deadArr.push(n);
+        sessionStorage.deadArr = JSON.stringify(deadArr);
+        sessionStorage.cixuhao = n;
+        sessionStorage.ciNum = ciNum;
+        sessionStorage.kiNum = kiNum;
+        gameover();
+    } else {
+        alert('请选择玩家');
     }
-    sessionStorage.noteArr = JSON.stringify(noteArr);
-    deadArr.push(n);
-    sessionStorage.deadArr = JSON.stringify(deadArr);
-    sessionStorage.cixuhao = n;
-    sessionStorage.ciNum = ciNum;
-    sessionStorage.kiNum = kiNum;
-    gameover();
 });
+
+function choose() {
+    for (var i = 0; i < playerArr.length; i++) {
+        if (playerArr[i].style.background == "red") {
+            chooseNum = chooseNum + 1;
+        }
+    }
+}
 
 function gameover() {
     if (kiNum <= 0) {
