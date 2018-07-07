@@ -3,20 +3,31 @@ console.log("js文件");
 var n = 0; //点击次数
 var y = 0;//天数
 
+$('#back').on('click', function () {
+    alert('就不想写返回');
+}); //左上角返回按钮
+$('#close').on('click', close); //右上角关闭按钮
+function close() {
+    var message = confirm("是否结束本轮游戏？"); //是否确定
+    if (message) {
+        location.replace('page2.html'); //返回首页
+    }
+}
 
 window.onload = function () {
     var x = sessionStorage.getItem("x");
     y = Number(sessionStorage.getItem('y'));
     $('.dayNum').html('第'+(y+1)+'天');
+    var cixuhao = sessionStorage.getItem('cixuhao') 
     if (x == "杀人") {
         $('.p1').addClass('p5');
-        $('.jiao1').addClass('jiao5');
-        
+        $('.jiao1').addClass('jiao5');   
         n=1;
+        $('#record').text('第'+(y+1)+'天：'+"杀手杀死了"+(cixuhao+1)+"号玩家，"+(cixuhao+1)+"号玩家的身份是平民。" )
     } else if (x == "投票") {
-        // y = Number(sessionStorage.getItem('y'));
-        // $('.dayNum').html('第'+(y+1)+'天');
-
+        y = Number(sessionStorage.getItem('y'));
+        $('.dayNum').html('第'+(y+1)+'天');
+        $('#record').text('第'+(y+1)+'天：'+"杀手杀死了"+(cixuhao+1)+"号玩家，"+(cixuhao+1)+"号玩家的身份是平民。" )
     }
 }
 

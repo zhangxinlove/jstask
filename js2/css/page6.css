@@ -4,8 +4,7 @@ html{
 }
 .date{
     width: 90%;
-    min-height:100vh;
-    margin: 15px auto;
+    margin: 30px auto;
     border: 1px solid #c9c9c9;
     font-size: 0.15rem;
     line-height: 0.38rem;
@@ -21,7 +20,6 @@ html{
     position: relative;
     margin-left: 20px;
     padding: 15px;
-    min-height: 100vh;
     border-left: 2px solid #c1c1c1;
     color: #fff;
 }
@@ -36,7 +34,7 @@ html{
     pointer-events: none;
 }
 .daylight{
-    margin: 40px 0;
+    margin: .5rem 0;
 }
 .jiao{
     position: absolute;
@@ -60,4 +58,26 @@ html{
 }
 .sun{
     top: 110px;
+}
+footer{
+    position: fixed;
+    display: flex;
+    z-index: 1;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 640px;
+    background: #29bde0;
+    
+}
+footer button{
+    margin: .15rem .2rem;
+    padding: .15rem;
+    border:none;
+    width: 40%;
+    font-size: .18rem;
+    color: #fff;
+    background: #fbb435;
+    border-radius: 5px;
 }

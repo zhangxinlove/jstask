@@ -40,6 +40,7 @@ function role(){
     playersArr=[];
     var killer= Math.floor(inputNum.value/3);//杀手人数
     sessionStorage.kiNum = killer;
+    sessionStorage.ciNum = inputNum.value - killer;
     for (var i=0;i<killer;i++ ){
         playersArr[i]="杀手";
     }

@@ -29,8 +29,10 @@ for (var i=0;i<Num;i++){
 
 $('#playgame').on('click',function(){
     //重置杀人页面数据
-    sessionStorage.removeItem("x"); 
-    sessionStorage.removeItem("y"); 
+    sessionStorage.removeItem("x");//重置游戏状态（判断杀人页面或投票页面）
+    sessionStorage.removeItem("y");//重置游戏天数
+    var deadArr = new Array; //死亡玩家数组
+    sessionStorage.deadArr=JSON.stringify(deadArr);
 
     location.assign('page6.html');
 });
