@@ -5,7 +5,7 @@ var y = 0;//天数
 var playArr = JSON.parse(sessionStorage.getItem("playArr")); //上一页面身份数组
 
 $('#back').on('click', function () {
-    alert('就不想写返回');
+    alert('返回就乱了');
 }); //左上角返回按钮
 $('#close').on('click', close); //右上角关闭按钮
 function close() {

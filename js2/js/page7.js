@@ -10,7 +10,7 @@ var deadArr = JSON.parse(sessionStorage.getItem("deadArr")); //死亡玩家数�
 var identity; //选中身份
 var n; //选中的玩家数组角标
 var y = sessionStorage.getItem('y') * 1; //天数
-var chooseNum = 0;
+var chooseNum;
 
 var playbox = $('.play-box');
 for (var i = 0; i < Num; i++) {
@@ -71,7 +71,7 @@ function kill() { //杀人页面执行
                 console.log('玩家数组角标：' + n);
                 if (playerArr[n].style.background != "red") {
                     if (target.innerText.substring(0, 2) == "杀手") {
-                        alert("你瞅啥？你想咋地？"); //杀手不能杀杀手
+                        alert("请选择平民"); //杀手只能杀平民
                     } else {
                         bgcolor();
                         playerArr[n].style.background = "red"; //点击的平民变色
@@ -117,7 +117,14 @@ function vote() { //投票页面执行
 } //玩家投票
 
 $('#playgame').on('click', function () {
-    choose();
+    chooseNum = 0;
+    for (var i = 0; i < playerArr.length; i++) {
+        if (playerArr[i].style.background == "red") {
+            chooseNum = chooseNum + 1;
+        }
+    }
+    console.log(chooseNum)
+    console.log(deadArr.length)
     if (chooseNum > deadArr.length) {
         var noteArr = JSON.parse(sessionStorage.getItem("noteArr")); //法官笔记
         var cixuhao = sessionStorage.getItem('cixuhao') * 1
@@ -143,17 +150,9 @@ $('#playgame').on('click', function () {
         sessionStorage.kiNum = kiNum;
         gameover();
     } else {
-        alert('请选择玩家');
+        console.log('请选择玩家');
     }
 });
-
-function choose() {
-    for (var i = 0; i < playerArr.length; i++) {
-        if (playerArr[i].style.background == "red") {
-            chooseNum = chooseNum + 1;
-        }
-    }
-}
 
 function gameover() {
     if (kiNum <= 0) {
