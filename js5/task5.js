@@ -17,7 +17,7 @@ btn.onclick = function () {
             // data = JSON.parse(data);
             // if (message == success){
             if (data.code == 0) {
-                // location.assign("http://dev.admin.carrots.ptteng.com/#/login"); //跳转网页
+                location.assign("http://dev.admin.carrots.ptteng.com/#/login"); //跳转网页
                 // console.log("data:",data);
             } else {
                 document.getElementById("hide").innerHTML = data.message;
