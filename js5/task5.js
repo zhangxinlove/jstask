@@ -14,10 +14,10 @@ btn.onclick = function () {
             xmlhttp.status == 200) { //服务器已成功处理了请求。通常，这表示服务器提供了请求的网页。
             var data = xmlhttp.responseText;
             console.log("data字符串:",data);
-            // data = JSON.parse(data);
+            data = JSON.parse(data);
             // if (message == success){
             if (data.code == 0) {
-                // location.assign("http://dev.admin.carrots.ptteng.com/#/login"); //跳转网页
+                location.assign("http://dev.admin.carrots.ptteng.com/#/login"); //跳转网页
                 // console.log("data:",data);
             } else {
                 document.getElementById("hide").innerHTML = data.message;
