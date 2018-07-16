@@ -1,4 +1,4 @@
-console.log("jquery");
+console.log("引入jquery成功");
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
