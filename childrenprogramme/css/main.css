@@ -140,6 +140,26 @@ span.phone {
     margin-left: -20px;
     margin-top: 5px;
 }
+/* 游戏、视频 */
+.scratch img {
+    position: relative;
+    top: 20px;
+}
+.game {
+    max-width: 360px;
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.game .bottom {
+    position: relative;
+    padding: 12px 12px 12px 32px;
+    margin-bottom: 30px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #d2ebe9;
+}
+
 
 /* 为什么选择编程王 */
 
