@@ -1,0 +1,68 @@
+.sidebarbox{
+    position: fixed;
+    top: 0;
+    right: 1vw;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+}
+.qqbox,.phonebox,.topbox{
+    display: inline-block;
+    border-radius: 50%;
+    background: #1f9d92;
+    margin-top: 5px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qqimg,.callphoneimg,.totopimg{
+    width: 20px;
+    height: 20px;
+}
+.phonelefthide{
+    position: absolute;
+    left: -180px;
+    width: 168px;
+    padding: 12px;
+    background-color: #fff;
+    box-shadow: 0 0 1px #999999;
+}
+/* 小三角 */
+.triangle-right {
+    position: absolute;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid #fff;
+    border-bottom: 5px solid transparent;
+}
+/* 初始隐藏 */
+.qqhide,.phonehide,.phonelefthide,.tophide{
+    display: none;
+}
+/* hover效果 */
+.qqbox:hover .qqimg{
+    display: none;
+}
+.qqbox:hover .qqhide{
+    display: block;
+}
+.phonebox:hover .callphoneimg{
+    display: none;
+}
+.phonebox:hover .phonehide{
+    display: block;
+}
+.phonebox:hover .phonelefthide{
+    display: block;
+}
+.topbox:hover .totopimg{
+    display: none;
+}
+.topbox:hover .tophide{
+    display: block;
+}
