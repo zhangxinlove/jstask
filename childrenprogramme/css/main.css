@@ -1,0 +1,225 @@
+html {
+    font-size: 625%;
+}
+
+body {
+    min-width: 320px;
+    background: #d2ebe9;
+}
+
+/* 页面通用自体颜色 */
+
+.green {
+    color: #1f9d92;
+}
+
+.blue {
+    color: #296996;
+}
+
+/* 主体宽度自适应 */
+
+main {
+    margin: 90px auto 0;
+    padding: 0 50px;
+}
+@media screen and (max-width: 767px) {
+    main{
+        margin-top: 8px;
+    }
+}
+@media screen and (max-width: 500px) {
+    main {
+        width: 99%;
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 996px) {
+    main {
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 1170px) {
+    main {
+        width: 80%;
+    }
+}
+
+/* 轮播图 */
+
+.carousel-inner img {
+    width: 100%;
+    height: 60vh;
+}
+
+.carousel-indicators li {
+    border-radius: 0;
+}
+
+.carousel-indicators .active {
+    background: #000;
+}
+
+.rightdot {
+    right: 0;
+    left: auto;
+}
+
+.carousel-control {
+    color: #111;
+}
+
+.carousel-control:hover {
+    color: #000;
+}
+
+/* 主体内容 */
+
+
+/* 绿色小短线 */
+.line {
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background: #d2ebe9;
+}
+
+.main-top-bottom {
+    color: #266996;
+    background: #ccbecf;
+}
+
+.main-middle-bottom {
+    background: #ccbecf;
+}
+
+/* 大标题 */
+
+@media screen and (max-width: 768px) {
+    .title>img {
+        display: none;
+    }
+    .titleText {
+        font-size: 20px;
+    }
+    .title-box {
+        margin: 20px 0;
+    }
+}
+
+
+
+.black-tech img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* 中间三个电话号码 */
+
+span.phone {
+    white-space: nowrap;
+    margin-right: 15px;
+}
+
+/* 绿色小方块 */
+
+.dot {
+    float: left;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #1f9d92;
+    margin-left: -20px;
+    margin-top: 5px;
+}
+
+/* 为什么选择编程王 */
+
+@media screen and (min-width: 768px) {
+    .mm-row-t,
+    .mm-row-b,
+    .classroom {
+        display: flex;
+        align-items: center;
+    }
+    .classroom-left{
+        width: 100%;
+        padding-left: 15px;
+    }
+    /* 图片文字焕位置 */
+    .mm-row-b {
+        flex-direction: row-reverse;
+    }
+    .mm-text-t,
+    .mm-text-b {
+        padding: 0 80px;
+    }
+    .mm1,
+    .mm2 {
+        max-width: 3rem;
+    }
+}
+
+/* 人物介绍 */
+.photo{
+    width: 1.7rem;
+}
+.message {
+    max-width: 2rem;
+}
+
+/* 课程体系 */
+
+.class-item {
+    width: 2rem;
+    height: 2rem;
+    margin: .2rem auto;
+}
+
+@media screen and (max-width: 991px) {
+    .pen {
+        display: none;
+    }
+}
+/* 有趣的课堂内容 */
+
+.classroom {
+    background: #d2ebe9;
+    margin: .4rem .2rem;
+    line-height: 2;
+}
+
+.classroom img {
+    width: 100%;
+}
+.classroom-left{
+    max-width: 5rem;
+    line-height: 2;
+}
+.classroom .dot{
+    margin-top: 10px;
+}
+/* 黑科技 */
+.black-box{
+    max-width: 2.5rem;
+    height: 3rem;
+    margin-bottom: .4rem;
+}
+/* 让孩子从容面对未来 */
+.future{
+    background: #d2ebe9;
+    box-sizing: border-box;
+}
+@media screen and (min-width: 992px) {
+    .future{
+        min-height: 4.2rem;
+    }
+}

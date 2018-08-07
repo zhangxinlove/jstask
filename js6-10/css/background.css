@@ -1,0 +1,19 @@
+@media screen and (min-width:768px) {
+    .accordion {
+        float: left;
+        width: 250px;
+        padding-bottom: 100vh;
+        overflow: hidden;
+    }
+    .main{
+        float: left;
+        width: calc(100% - 250px);
+    }
+}
+.navbar{
+    background: rgb(35, 42, 58);
+    border-bottom: 1px solid #ccc;
+}
+.container{
+    max-width: 100%!important;
+}

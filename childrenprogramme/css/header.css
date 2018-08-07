@@ -1,0 +1,54 @@
+.navbar {
+    margin: 0;
+    background: #ccbecf;
+}
+
+.navbar-default {
+    padding: 15px 0;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-nav {
+        float: right;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 996px) {
+    .nav-width {
+        width: 80%;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    .nav-width {
+        width: 99%;
+        padding: 0;
+    }
+}
+
+.navbar-collapse {
+    border-color: #ccbecf !important;
+}
+
+.nav>li {
+    text-align: center;
+}
+
+.navbar-nav>li>a {
+    font-size: 18px;
+    color: #666;
+}
+
+.navbar-nav>li>a:hover {
+    color: #1f9d92 !important;
+}
+
+img.logo {
+    height: 50px;
+    padding: 0;
+}

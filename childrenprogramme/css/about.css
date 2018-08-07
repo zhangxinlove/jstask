@@ -1,0 +1,46 @@
+html {
+    font-size: 625%;
+}
+
+body {
+    min-width: 320px;
+    background: #d2ebe9;
+}
+
+/* 页面通用自体颜色 */
+
+.green {
+    color: #1f9d92;
+}
+
+.blue {
+    color: #296996;
+}
+
+/* 主体宽度自适应 */
+
+main {
+    margin: 70px auto 0;
+}
+@media screen and (min-width: 768px) {
+    main{margin-top: 152px;}
+}
+@media screen and (min-width: 997px) {
+    main{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 996px) {
+    main{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 500px) {
+    main{
+        width: 99%;
+    }
+}
+
+
+
+
