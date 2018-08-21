@@ -59,11 +59,37 @@ main {
     width: 100%;
     height: 60vh;
 }
+/* 箭头 */
+.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-left {
+    left: 20px;
+}
+.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-right {
+    right: 20px;
+}
+/* .glyphicon-chevron-left:before,.glyphicon-chevron-right:before {
+    content: none;
+}
+.glyphicon-chevron-left,.glyphicon-chevron-right{
+    visibility: visible;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border-top: 7px solid #353535;
+    border-right: 7px solid #353535;
+    transform: rotate(-135deg);
+    margin-left: -30px!important;
+}
+.glyphicon-chevron-right{
+    transform: rotate(45deg);
+    margin-right: -30px!important;
+} */
 
+/* 轮播点 */
 .carousel-indicators li {
     border-radius: 0;
+    border-color: #000;
 }
-
+/* 轮播到的点 */
 .carousel-indicators .active {
     background: #000;
 }
@@ -83,6 +109,12 @@ main {
 
 /* 主体内容 */
 
+/* 为什么要让孩子学习编程 */
+@media screen and (min-width: 1600px) {
+    .why-img{
+        width: 210px;
+    }
+}
 
 /* 绿色小短线 */
 .line {
@@ -93,6 +125,7 @@ main {
 }
 
 .main-top-bottom {
+    width: calc( 100% + 60px);
     color: #266996;
     background: #ccbecf;
 }
@@ -146,7 +179,6 @@ span.phone {
     top: 20px;
 }
 .game {
-    max-width: 360px;
     margin: auto;
     border-radius: 10px;
     cursor: pointer;
@@ -180,22 +212,66 @@ span.phone {
     }
     .mm-text-t,
     .mm-text-b {
-        padding: 0 80px;
+        padding: 0 95px;
     }
     .mm1,
     .mm2 {
         max-width: 3rem;
     }
+    .mm1{
+        padding-right: 65px;
+    }
+    .mm2{
+        padding-left: 65px;
+    }
 }
+@media screen and (min-width: 1600px){
 
+}
 /* 人物介绍 */
-.photo{
+.photo,.message{
     width: 1.7rem;
 }
-.message {
-    max-width: 2rem;
+.message-t,.message-b{
+    font-family: 微软雅黑,Microsoft YaHei;
 }
-
+.message-m{
+    font-family: 黑体,SimHei;
+}
+@media screen and (max-width: 991px){
+    .message{
+    margin-left: auto;
+    margin-right: auto;        
+    }
+}
+@media screen and (min-width: 768px){
+    .message-row{
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .message1{
+        margin-right: auto;
+    }
+    .message3{
+        margin-left: auto;
+    }
+}
+@media screen and (min-width: 1600px){
+    .mm1{
+        padding-right: 150px;
+    }
+    .mm2{
+        padding-left: 150px;
+    }
+    .mm-text-t,.mm-text-b{
+        padding-left: 165px;
+        padding-right: 165px;
+    }
+    .message-row{
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+}
 /* 课程体系 */
 
 .class-item {
@@ -213,7 +289,7 @@ span.phone {
 
 .classroom {
     background: #d2ebe9;
-    margin: .4rem .2rem;
+    margin: .4rem .3rem;
     line-height: 2;
 }
 
@@ -227,11 +303,22 @@ span.phone {
 .classroom .dot{
     margin-top: 10px;
 }
-/* 黑科技 */
+/* 黑科技延伸 */
 .black-box{
-    max-width: 2.5rem;
-    height: 3rem;
+    /* max-width: 2.5rem; */
+    min-height: 3rem;
     margin-bottom: .4rem;
+}
+@media screen and (max-width: 991px){
+    .black-box{
+        max-width: 2.5rem;
+    }
+}
+.black-title{
+    font-family: 微软雅黑,Microsoft YaHei;
+}
+.black-text{
+    font-family: 黑体,SimHei;
 }
 /* 让孩子从容面对未来 */
 .future{
@@ -239,7 +326,32 @@ span.phone {
     box-sizing: border-box;
 }
 @media screen and (min-width: 992px) {
-    .future{
-        min-height: 4.2rem;
+    .future-text{
+        min-height: 120px;
     }
+}
+@media screen and (min-width: 1100px) {
+    .future-text{
+        min-height: 100px;
+    }
+}
+@media screen and (min-width: 1300px) {
+    .future-text{
+        min-height: 80px;
+    }
+}
+@media screen and (min-width: 1500px) {
+    .future-text{
+        min-height: 60px;
+    }
+}
+@media screen and (min-width: 2050px) {
+    .future-text{
+        min-height: 50px;
+    }
+}
+/* 锚点 */
+#address,#class{
+    position: absolute;
+    top: -81px;
 }

@@ -27,17 +27,17 @@ main {
 }
 @media screen and (min-width: 997px) {
     main{
-        width: 70%;
+        width: calc( 70% - 30px);
     }
 }
 @media screen and (max-width: 996px) {
     main{
-        width: 80%;
+        width: calc( 80% - 30px);
     }
 }
 @media screen and (max-width: 500px) {
     main{
-        width: 99%;
+        width: calc( 100% - 30px);
     }
 }
 

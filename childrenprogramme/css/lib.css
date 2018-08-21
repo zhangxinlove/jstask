@@ -122,8 +122,10 @@
 .ml10{margin-left:10px;}
 .ml15{margin-left:15px;}
 .ml20{margin-left:20px;}
+.ml25{margin-left:25px;}
 .ml30{margin-left:30px;}
 .ml-20{margin-left:-20px;}
+.ml-30{margin-left:-30px;}
 .mr1{margin-right:1px;}
 .mr2{margin-right:2px;}
 .mr5{margin-right:5px;}
@@ -131,6 +133,7 @@
 .mr15{margin-right:15px;}
 .mr20{margin-right:20px;}
 .mr30{margin-right:30px;}
+.mr-30{margin-right:-30px;}
 .mt1{margin-top:1px;}
 .mt2{margin-top:2px;}
 .mt5{margin-top:5px;}
@@ -201,6 +204,7 @@
 .pt30{padding-top:30px;}
 .pr30{padding-right:30px;}
 .pb30{padding-bottom:30px;}
+.pl30{padding-left:30px;}
 /* border-color name rule: border(b)-position(l/r/t/b/d)-width(null/2)-style(null/sh)-color(first one letter/first two letter) |-> All colors are safe color*/
 .bdc{border:1px solid #ccc;}
 .blc{border-left:1px solid #ccc;}

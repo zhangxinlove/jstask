@@ -17,6 +17,9 @@
         z-index: 99;
         width: 100%;
     }
+    .nav > li > a{
+        padding-right: 0;
+    }
 }
 @media screen and (max-width: 996px) {
     .nav-width {
@@ -41,7 +44,7 @@
 
 .navbar-nav>li>a {
     font-size: 18px;
-    color: #666;
+    color: #666!important;
 }
 
 .navbar-nav>li>a:hover {

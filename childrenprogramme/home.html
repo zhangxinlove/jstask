@@ -21,14 +21,16 @@
         <div class="header-box">
             <nav class="navbar navbar-default" role="navigation">
                 <div class="pct70 auto nav-width">
-                    <div class="navbar-header">
+                    <div class="navbar-header ml15">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
                             <span class="sr-only">切换导航</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <img class="logo navbar-brand" src="img/logo.png">
+                        <a href="home.html">
+                            <img class="logo navbar-brand" src="img/logo.png">
+                        </a>
                     </div>
                     <div class="collapse navbar-collapse" id="example-navbar-collapse">
                         <ul class="nav navbar-nav">
@@ -36,13 +38,13 @@
                                 <a class="b" href="home.html">首页</a>
                             </li>
                             <li>
-                                <a class="ml10 b" href="#class">课程体系</a>
+                                <a class="ml25 b" href="#class">课程体系</a>
                             </li>
                             <li>
-                                <a class="ml10 b" href="#address">上课地点</a>
+                                <a class="ml25 b" href="#address">上课地点</a>
                             </li>
                             <li>
-                                <a class="ml10 b" href="about.html">关于我们</a>
+                                <a class="ml25 b" href="about.html">关于我们</a>
                             </li>
 
                         </ul>
@@ -51,7 +53,7 @@
             </nav>
         </div>
     </header>
-    <main>
+    <main class="auto">
         <!-- 轮播 -->
 
         <div class="myCarousel--blank">
@@ -86,7 +88,7 @@
         </div>
         <!-- 为什么要让孩子学编程 -->
 
-        <div class="tiele flexcc" id="class">
+        <div class="tiele flexcc">
             <div class="title">
                 <img class="h110 mt30 mr30 mb30 ml-20" src="img/title1.png">
             </div>
@@ -96,29 +98,29 @@
             </div>
         </div>
         <div class="container-fluid bgwh radius10 ovh">
-            <div class="row">
-                <p class="tc green f20 mt40 mb20">让孩子站在人工智能的时代前沿</p>
+            <div class="row pl30 pr30">
+                <p class="tc green f20 mt40 mb20 b">让孩子站在人工智能的时代前沿</p>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="tc">
-                        <img class="w120 mt30 mb30" src="img/mt1.png">
+                        <img class="w160 mt30 mb30 why-img" src="img/mt1.png">
                         <p class="f16 c6">拥有逻辑思维</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="tc">
-                        <img class="w120 mt30 mb30" src="img/mt2.png">
+                        <img class="w160 mt30 mb30 why-img" src="img/mt2.png">
                         <p class="f16 c6">掌握编程技能</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="tc">
-                        <img class="w120 mt30 mb30" src="img/mt3.png">
+                        <img class="w160 mt30 mb30 why-img" src="img/mt3.png">
                         <p class="f16 c6">拥有批判思维</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="tc">
-                        <img class="w120 mt30 mb30" src="img/mt4.png">
+                        <img class="w160 mt30 mb30 why-img" src="img/mt4.png">
                         <p class="f16 c6">拥有创新能力</p>
                     </div>
                 </div>
@@ -132,7 +134,7 @@
                     <div class="scratch tc">
                         <img src="img/scratch.png">
                     </div>
-                    <div class="game" id="toGame1">
+                    <div class="game radius10 ovh" id="toGame1">
                         <div class="top">
                             <img class="pct100" src="img/game1.png" class="cover">
                         </div>
@@ -150,7 +152,7 @@
                     <div class="scratch tc">
                         <img src="img/scratch.png">
                     </div>
-                    <div class="game" id="toGame2">
+                    <div class="game radius10 ovh" id="toGame2">
                         <div class="top">
                             <img class="pct100" src="img/game2.png" class="cover">
                         </div>
@@ -168,7 +170,7 @@
                     <div class="scratch tc">
                         <img src="img/scratch.png">
                     </div>
-                    <div class="game" id="toGame3">
+                    <div class="game radius10 ovh" id="toGame3">
                         <div class="top">
                             <img class="pct100" src="img/game3.png" class="cover">
                         </div>
@@ -184,7 +186,7 @@
                 </div>
 
 
-                <div class="col-xs-12 main-top-bottom tc pt15 pb15">
+                <div class="col-xs-12 main-top-bottom tc pt15 pb15 ml-30">
                     联系我们：
                     <span class="phone">固定电话0000-4567890</span>
                     <span class="phone">张老师：0123456789</span>
@@ -194,7 +196,8 @@
         </div>
         <!-- 为什么选择编程王 -->
 
-        <div class="tiele flexcc">
+        <div class="tiele flexcc rel">
+            <span id="class"></span>
             <div class="title">
                 <img class="h110 mt40 mr30 mb10 ml-20" src="img/title2.png">
             </div>
@@ -204,77 +207,79 @@
             </div>
         </div>
         <div class="container-fluid main-middle radius10 bgwh">
-            <p class="tc green f20 mt40 mb20 b">
-                互联网+奥数培训专家的强强联合
-            </p>
-            <div class="row mt30 mb30 mm-row-t">
-                <div class="col-md-6 col-xs-12 mt15 mb15 mm-text-t p30">
-                    <p class="">互联网领航者打造课程</p>
-                    <p class="">
-                        <span class="dot"></span>
-                        <span class="green">IT修真院</span>是一家优秀的成人培训机构，自创办以来学员就业率
-                        <span class="green">99.5%</span>，业内一致好评，
-                        <span class="green">BAT、搜狐、京东</span>大咖亲自代言
-                    </p>
-                    <p class="">
-                        <span class="dot"></span> 全国范围共设
-                        <span class="green">7大分院</span>，北京、上海、深圳、武汉、成都、郑州、西安，足迹遍布全国
-                    </p>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                    <img class="db auto pct100 mm1" src="img/mm1.png">
-                </div>
-            </div>
-            <div class="row mat30 mb30 mm-row-b">
-                <div class="col-md-6 col-xs-12  mt15 mb15 mm-text-b  p30">
-                    <p class="">知名奥数培训师指导</p>
-                    <p class="">
-                        <span class="dot"></span>
-                        畅逸博教育奥数老师团队
-                        <span class="green">二十年</span>少儿奥数培训经验，知名奥数培训师知道。
-                    </p>
-                    <p class="">
-                        <span class="dot"></span>
-                        j精通
-                        <span class="green">儿童心理学</span>团队视角充分
-                    </p>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                    <img class="db auto pct100 mm2" src="img/mm2.png">
-                </div>
-            </div>
-            <!-- 教学阵容 -->
-            <div class="row">
-                <p class="tc f18 b m30">全博士课程顾问阵容</p>
-                <div class="col-md-4 col-sm-4 col-xs-12 tc">
-                    <img class="photo" src="img/person1.png">
-                    <div class="tl f12 c6 mt20 lh20 auto message">
-                        <p class="tc b">苏博士</p>
-                        <p class="">医学博士后
-                            <br>中华医学会数字骨科学组委员、
-                            <br>SICOT部创伤学会委员、数字骨科学会委员</p>
-                        <p class="b green"> 未来是数字的时间</p>
+            <div class="main-middle-top">
+                <p class="tc green f20 mt40 mb20 b">
+                    互联网+奥数培训专家的强强联合
+                </p>
+                <div class="row mt30 mb30 pl30 pr30 mm-row-t">
+                    <div class="col-md-6 col-xs-12 mt15 mb15 mm-text-t p30">
+                        <p class="f16 b c3">互联网领航者打造课程</p>
+                        <p class="f14 c6">
+                            <span class="dot"></span>
+                            <span class="green">IT修真院</span>是一家优秀的成人培训机构，自创办以来学员就业率
+                            <span class="green">99.5%</span>，业内一致好评，
+                            <span class="green">BAT、搜狐、京东</span>大咖亲自代言
+                        </p>
+                        <p class="f14 c6">
+                            <span class="dot"></span> 全国范围共设
+                            <span class="green">7大分院</span>，北京、上海、深圳、武汉、成都、郑州、西安，足迹遍布全国
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-xs-12 tr">
+                        <img class="pct100 mm1" src="img/mm1.png">
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 tc">
-                    <img class="photo" src="img/person2.png">
-                    <div class="tl f12 c6 mt20 lh20 auto message">
-                        <p class="tc b">杜博士</p>
-                        <p class="">副教授
-                            <br>河南省教师教育专家,
-                            <br>长期从事青少年与新媒体教育研究工作中</p>
-                        <p class="b green"> 人工智能+教育，未来无限可能</p>
+                <div class="row mat30 mb30 pl30 pr30 mm-row-b">
+                    <div class="col-md-6 col-xs-12  mt15 mb15 mm-text-b  p30">
+                        <p class="f16 b c3">知名奥数培训师指导</p>
+                        <p class="f14 c6">
+                            <span class="dot"></span>
+                            畅逸博教育奥数老师团队
+                            <span class="green">二十年</span>少儿奥数培训经验，知名奥数培训师指导。
+                        </p>
+                        <p class="f14 c6">
+                            <span class="dot"></span>
+                            精通
+                            <span class="green">儿童心理学</span>因材施教充分发挥儿童创造力，想象力
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-xs-12 tl">
+                        <img class="pct100 mm2" src="img/mm2.png">
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 tc">
-                    <img class="photo" src="img/person3.png">
-                    <div class="tl f12 c6 mt20 lh20 auto message">
-                        <p class="tc b">扎老师</p>
-                        <p>硕士研究生导师
-                            <br>中国工艺美术学会会员，
-                            <br>中国艺术人类学会会员，
-                            <br>主持国家级和省部级研究课题4项</p>
-                        <p class="b green">艺术与科技是人类文明发展的双引擎</p>
+                <!-- 教学阵容 -->
+                <div class="row message-row">
+                    <p class="tc f18 b m30">全博士课程顾问阵容</p>
+                    <div class="col-md-4">
+                        <div class="tl f12 c6 lh20 message message1">
+                            <img class="photo mb15" src="img/person1.png">
+                            <p class="message-t tc b">苏博士</p>
+                            <p class="message-m">医学博士后
+                                <br>中华医学会数字骨科学组委员、
+                                <br>SICOT部创伤学会委员、数字骨科学会委员</p>
+                            <p class="message-b b green"> 未来是数字的时间</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tl f12 c6 lh20 auto message">
+                            <img class="photo mb15" src="img/person2.png">
+                            <p class="message-t tc b">杜博士</p>
+                            <p class="message-m">副教授
+                                <br>河南省教师教育专家,
+                                <br>长期从事青少年与新媒体教育研究工作中</p>
+                            <p class="message-b b green"> 人工智能+教育，未来无限可能</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tl f12 c6 lh20 message message3">
+                            <img class="photo mb15" src="img/person3.png">
+                            <p class="message-t tc b">扎老师</p>
+                            <p class="message-m">硕士研究生导师
+                                <br>中国工艺美术学会会员，
+                                <br>中国艺术人类学会会员，
+                                <br>主持国家级和省部级研究课题4项</p>
+                            <p class="message-b b green">艺术与科技是人类文明发展的双引擎</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,10 +288,10 @@
                 <p class="tc f20 mt40 mb20 b">丰富的课程体系</p>
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="tc class-item">
-                        <img src="img/icon1.png">
-                        <p class="">LEGO乐高</p>
+                        <img src="img/icon1.png" class="mb20">
+                        <p class="f14 b">LEGO乐高</p>
                         <p class="">·适合年龄1-5岁</p>
-                        <p class="tl">创意拼接，妙不可言让每一位孩子亲自动手搭建机器人模型，开启丰富想象力</p>
+                        <p class="tl lh24">创意拼接，妙不可言让每一位孩子亲自动手搭建机器人模型，开启丰富想象力</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12 pen">
@@ -297,40 +302,40 @@
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="tc class-item">
-                        <img src="img/icon2.png">
-                        <p class="">机器人</p>
+                        <img src="img/icon2.png" class="mb20">
+                        <p class="f14 b">机器人</p>
                         <p class="">·适合年龄5-7岁</p>
-                        <p class="tl">通过编写Scratch代码去命令机器人，是我们下一代必备的工作技能和生活技能</p>
+                        <p class="tl lh24">通过编写Scratch代码去命令机器人，是我们下一代必备的工作技能和生活技能</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="tc class-item">
-                        <img src="img/icon3.png">
-                        <p class="">Scratch</p>
+                        <img src="img/icon3.png" class="mb20">
+                        <p class="f14 b">Scratch</p>
                         <p class="">·适合年龄7-12岁</p>
-                        <p class="tl">有麻省理工（MIT）设计开发的少儿编程工具，无可挑剔的少儿编程入门语言</p>
+                        <p class="tl lh24">有麻省理工（MIT）设计开发的少儿编程工具，无可挑剔的少儿编程入门语言</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="tc class-item">
-                        <img src="img/icon4.png">
-                        <p class="">Css</p>
+                        <img src="img/icon4.png" class="mb20">
+                        <p class="f14 b">Css</p>
                         <p class="">·适合年龄12-15岁</p>
-                        <p class="tl">CSS文件编码技能是web工程师的必备技能，是少儿编程不可缺少的一部分</p>
+                        <p class="tl lh24">CSS文件编码技能是web工程师的必备技能，是少儿编程不可缺少的一部分</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="tc class-item">
-                        <img src="img/icon5.png">
-                        <p class="">Python</p>
+                        <img src="img/icon5.png" class="mb20">
+                        <p class="f14 b">Python</p>
                         <p class="">·适合年龄15岁以上</p>
-                        <p class="tl">互联网时代的新宠，学习大数据与机械必备语言，简洁清晰、强大。胶水语言</p>
+                        <p class="tl lh24">互联网时代的新宠，学习大数据与机械必备语言，简洁清晰、强大。胶水语言</p>
                     </div>
                 </div>
             </div>
-            <!-- 课堂内容 -->
-            <div class="row classroom radius10 ovh">
-                <div class="col-md-6 col-xs-12 ">
+            <!-- 有趣的课堂内容 -->
+            <div class="row  pl30 classroom radius10 ovh">
+                <div class="col-md-6 col-xs-12 pl50">
                     <div class="pct80 classroom-left auto lh20 ">
                         <p class="green b f20">有趣的课堂内容</p>
                         <p class="">
@@ -352,41 +357,42 @@
                 </div>
             </div>
             <!-- 黑科技延伸 -->
-            <div class="row">
-                <p class="tc green f20 mt40 mb20 b">黑科技延伸</p>
+            <div class="row pl30 pr30">
+                <p class="tc green f22 mt40 mb40 b">黑科技延伸</p>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="p10 black-box auto">
+                    <div class="black-box auto">
                         <img class="pct100 db auto radius10" src="img/mm5.png">
-                        <p class="f18 b mt20">虚拟现实</p>
-                        <p class="c6 lh24">vive pro VR只能眼镜
+                        <p class="f18 b mt20 black-title">虚拟现实</p>
+                        <p class="c6 lh24 f14 black-text">vive pro VR只能眼镜
                             <br>孩子们通过三维虚拟学习环境和编码近距离接触</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="p10 black-box auto">
+                    <div class="black-box auto">
                         <img class="pct100 db auto radius10" src="img/mm6.png">
-                        <p class="f18 b mt20">3D打印机</p>
-                        <p class="c6 lh24">603s高精度3维打印机
+                        <p class="f18 b mt20 black-title">3D打印机</p>
+                        <p class="c6 lh24 f14 black-text">603s高精度3维打印机
                             <br>让孩子们通过自己想象力，创造从无到有的过程</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="p10 black-box auto">
+                    <div class="black-box auto">
                         <img class="pct100 db auto radius10" src="img/mm7.jpg">
-                        <p class="f18 b mt20">智能机器人</p>
-                        <p class="c6 lh24">MINDSTORMS第三代机器人
+                        <p class="f18 b mt20 black-title">智能机器人</p>
+                        <p class="c6 lh24 f14 black-text">MINDSTORMS第三代机器人
                             <br>通过程序编写命令机器人，开启丰富想象力</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="p10 black-box auto">
+                    <div class="black-box auto">
                         <img class="pct100 db auto radius10" src="img/mm8.png">
                         <p class="f18 b mt20">激光键盘</p>
-                        <p class="c6 lh24">联想看家机器人
+                        <p class="c6 lh24 f14">联想看家机器人
                             <br>无限激光投影键盘</p>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <!-- 让孩子从容面对未来 -->
         <div class="tiele flexcc">
@@ -395,28 +401,28 @@
             </div>
             <div class="title-box">
                 <div class="titleText f35 b">让孩子从容面对未来</div>
-                <div class="titleLabel f12 green">Get the children ready for school</div>
+                <div class="titleLabel f12 green">GET THE CHILDREN READY FOR SCHOOL</div>
             </div>
         </div>
         </div>
         <div class="container-fluid bgwh radius10">
-            <div class="row">
+            <div class="row pl30 pr30">
                 <p class="green tc b f16 mt40">城镇登记失业率（%）</p>
                 <div class="col-xs-12">
-                    <img class="db pct90 auto mt40 mb40" src="img/mb1.png">
+                    <img class="db pct100 auto mt40 mb40" src="img/mb1.png">
                 </div>
-                <div class="col-md-6 col-xs-12 p30">
+                <div class="col-md-6 col-xs-12 pt30 pb30">
                     <div class="future radius10 ovh">
                         <img class="pct100" src="img/mb2.png">
-                        <p class="green pl30 pr30 pt30 f16 b">编程提高孩子学习成绩</p>
-                        <p class="c6 pt15 pr30 pb30 pl30">在思考分析问题和完成程序的过程中去培养编程思维，是培养孩子细心和专注的最佳工具。在组队完成创作作品的过程中，提升孩子的团队协作能力。编程将逐渐纳入基础教育，提前学习编程，为留学升学加码</p>
+                        <p class="green ml30 mr30 mt30 f16 b">编程提高孩子学习成绩</p>
+                        <p class="c6 mt15 mr30 mb30 ml30 future-text">在思考分析问题和完成程序的过程中去培养编程思维，是培养孩子细心和专注的最佳工具。在组队完成创作作品的过程中，提升孩子的团队协作能力。编程将逐渐纳入基础教育，提前学习编程，为留学升学加码</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-12 p30">
+                <div class="col-md-6 col-xs-12 pt30 pb30">
                     <div class="future radius10 ovh">
                         <img class="pct100" src="img/mb3.png">
-                        <p class="green pl30 pr30 pt30 f16 b">特招或考入名校</p>
-                        <p class="c6 pt15 pr30 pb30 pl30">2018年1月，教育部颁发的《新课程标准》指出：信息技术将从兴趣课程变为必修课程，并大幅度提升了学生在编程、计算思维、算法方面的思维要求，给予学生更大的发展选择空间（浙江省已明确要求）</p>
+                        <p class="green ml30 mr30 mt30 f16 b">特招或考入名校</p>
+                        <p class="c6 mt15 mr30 mb30 ml30 future-text">2018年1月，教育部颁发的《新课程标准》指出：信息技术将从兴趣课程变为必修课程，并大幅度提升了学生在编程、计算思维、算法方面的思维要求，给予学生更大的发展选择空间（浙江省已明确要求）</p>
                     </div>
                 </div>
             </div>
@@ -424,9 +430,9 @@
         </div>
         <div class="container-fluid">
             <!-- 上课环境 -->
-            <div class="row">
-                <p class="tc b f18 mt40">上课环境</p>
-                <p class="tc c6 mt20">地处郑州市金水区，有良好的教学环境，室内设备齐全，拥有少儿编程最先进的设备</p>
+            <div class="row pl30 pr30">
+                <p class="tc b f18 mt40 pt30">上课环境</p>
+                <p class="tc c6 mt40 mb30">地处郑州市金水区，有良好的教学环境，室内设备齐全，拥有少儿编程最先进的设备</p>
                 <div class="col-md-4 col-sm-4 col-xs-12 tc">
                     <img class="pct100 mt15" src="img/classroom1.png">
                 </div>
@@ -438,11 +444,13 @@
                 </div>
             </div>
             <!-- 上课地点 -->
-            <div class="row tc" id="address">
+
+            <div class="row tc rel">
+                <span  id="address"></span>
                 <div class="col-xs-12">
                     <p class="tc b f18 mt40">上课地点</p>
                     <p class="mt20 mb40 tc">地址：河南省郑州市金水区健康路159号发展大厦3楼</p>
-                    <img class="pct100 mt20 mb40" src="img/map.png">
+                    <img class="pct100 mt20 mb40 pl30 pr30" src="img/map.png">
                 </div>
             </div>
         </div>
@@ -522,7 +530,7 @@
         <div class="topbox">
             <img class="totopimg" src="img/totop.png">
             <div class="tophide tdn">
-                <a href="">
+                <a href="#" class="tdn">
                     <span class="wh">返回
                         <br>顶部</span>
                 </a>
