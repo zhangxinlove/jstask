@@ -21,3 +21,9 @@
         display: block;
     }
 }
+flash {
+    background-image: url(../img/onload.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60px 60px;
+}
