@@ -21,7 +21,7 @@
         display: block;
     }
 }
-flash {
+.flash {
     background-image: url(../img/onload.gif);
     background-repeat: no-repeat;
     background-position: center center;
