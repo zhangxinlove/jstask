@@ -1,0 +1,13 @@
+@media (max-width: 576px){
+    .top-lable{
+        padding-left: 15px;
+        text-align: left;
+    }
+}
+/* 列表表格 */
+.article-all th,.article-all td{
+    text-align: center;
+}
+.article-all th,.table-time{
+    white-space: nowrap;
+}

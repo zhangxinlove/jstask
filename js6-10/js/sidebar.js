@@ -1,3 +1,4 @@
+// 手风琴效果
 $(function () {
     var Accordion = function (el, multiple) {
         this.el = el || {};

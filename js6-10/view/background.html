@@ -1,0 +1,64 @@
+<!-- 符号字库 -->
+<link href="http://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- 顶部导航栏 -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="">萝卜多后台管理系统</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="user-out text-light" ng-click="logout()">
+            {{ roleName }}&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;{{ managerName }}&nbsp;&nbsp;|&nbsp;&nbsp;退出
+        </a>
+        <!-- 左侧边栏 -->
+        <div class="collapse navbar-collapse bg-dark" id="collapsibleNavbar">
+            <ul id="accordion" class="accordion">
+                <li class="">
+                    <div class="link">
+                        <i class="fa fa-home"></i>欢迎页
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="submenu" style="display: none;">
+                        <li>
+                            <a href="" ui-sref="background.welcome">欢迎页</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link">
+                        <i class="fa fa-wrench"></i>Article管理
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li>
+                            <a href="" ui-sref="background.article-list">Article列表</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link">
+                        <i class="fa fa-wrench"></i>后台管理
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li>
+                            <a href="" ng-sref="">账号管理</a>
+                        </li>
+                        <li>
+                            <a href="" ng-sref="">角色管理</a>
+                        </li>
+                        <li>
+                            <a href="" ng-sref="">修改密码</a>
+                        </li>
+                        <li>
+                            <a href="" ng-sref="">模块管理</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <script src="js/sidebar.js"></script>
+        </div>
+    </nav>
+    <!-- 左侧边栏 -->
+
+    <!-- 右部主体 -->
+    <div class="main" ui-view></div>

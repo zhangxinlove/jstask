@@ -1,19 +1,20 @@
-/* @media screen and (min-width:768px) {
-    .accordion {
-        float: left;
-        width: 250px;
-        padding-bottom: 100vh;
-        overflow: hidden;
-    }
-    .main{
-        float: left;
+/* 主要适应两种宽度，<=767px || >=768px */
+
+/* 主体路由视窗 */
+@media screen and (min-width:768px) {
+    .main {
+        position: absolute;
+        left: 250px;
+        top: 56px;
         width: calc(100% - 250px);
     }
 }
-.navbar{
-    background: rgb(35, 42, 58);
-    border-bottom: 1px solid #ccc;
+
+/* welcome欢迎页 */
+.welcome-h {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20vh;
 }
-.container{
-    max-width: 100%!important;
-} */
+
+/* aritcle-list列表页 */

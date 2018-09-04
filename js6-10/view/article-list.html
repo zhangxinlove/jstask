@@ -1,0 +1,102 @@
+<div class="container-fluid">
+    <!-- 顶部搜索表单 -->
+    <form action="" class="row p15 bdc m10 radius5">
+        <div class="col-sm-6 col-xl-4 mb5">
+            <div class="row">
+                <label for="" class="col-sm-4 top-lable p0 tr mt5">创建时间</label>
+                <div class="col-sm-8">
+                    <input type="text" class="f14 radius5 bdc pct100 pt5 pb5">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-4 mb5">
+            <div class="row">
+                <label for="" class="col-sm-4 top-lable p0 tr mt5">—</label>
+                <div class="col-sm-8">
+                    <input type="text" class="f14 radius5 bdc pct100 pt5 pb5">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-4 mb5">
+            <div class="row">
+                <label for="" class="col-sm-4 top-lable p0 tr mt5">状态</label>
+                <div class="col-sm-8">
+                    <select name="" id="" class="radius5 bdc pct100 pt5 pb5">
+                        <option value="">全部</option>
+                        <option value="">草稿</option>
+                        <option value="">上线</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-4 mb5">
+            <div class="row">
+                <label for="" class="col-sm-4 top-lable p0 tr mt5">类型</label>
+                <div class="col-sm-8">
+                    <select name="" id="" class="radius5 bdc pct100 pt5 pb5">
+                        <option value="">全部</option>
+                        <option value="">首页Banner</option>
+                        <option value="">找职位Banner</option>
+                        <option value="">找精英</option>
+                        <option value="">行业大图</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt15 tr">
+            <button type="button" value="搜索" class="btn btn-success f14">搜索</button>
+            <button type="button" value="重置" class="btn btn-danger f14">重置</button>
+        </div>
+    </form>
+
+    <!-- 下面列表 -->
+    <div class="row  p15 bdc m10 radius5">
+        
+        <div class="table-responsive radius5 ovh">
+                <div class="table-head bgblue pct100 flexbc p15">
+                        <span class="wh">Aticle列表</span> 
+                        <button class="btn btn-success" >新增</button>
+                    </div>
+            <table class="table table-bordered table-hover article-all f14">
+                <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>图片</th>
+                        <th>标题</th>
+                        <th>类型</th>
+                        <th>发布时间</th>
+                        <th>修改时间</th>
+                        <th>发布者</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in articleList">
+                        <td>{{ x.id }}</td>
+                        <td><img src="{{ x.img }}" width="50" height="50" alt=""></td>
+                        <td>{{ x.title }}</td>
+                        <td>{{ x.type | filterType }}</td>
+                        <td>
+                            <div class="table-time">{{x.createAt | date: "yyyy-MM-dd"}} </div>
+                            <div class="table-time">{{x.createAt | date: "HH:mm:ss"}}</div>
+                        </td>
+                        <td>
+                            <div class="table-time"> {{x.updateAt | date: "yyyy-MM-dd"}}</div>
+                            <div class="table-time"> {{x.updateAt | date: "HH:mm:ss"}}</div>
+                        </td>
+                        <td>{{ x.author }}</td>
+                        <td>{{ x.status | filterStatus }}</td>
+                        <td>
+                            <button class="btn btn-warning f14">上线</button>
+                            <button class="btn btn-success f14">编辑</button>
+                            <button class="btn btn-danger f14">删除</button>
+                        </td>
+                        <!-- <td>说明{{ x.content }}</td> -->
+                        <!-- <td>链接{{ x.url }}</td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
