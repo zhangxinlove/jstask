@@ -1,0 +1,131 @@
+<div class="container-fluid add-container">
+    <!-- 新增列表 -->
+    <div action="" class=" p15 bdc m10 radius5 add-box">
+        <div class="row mt-15 mb50 p15 bge0 b">
+            {{ addTop }}
+        </div>
+        <form action="" name="addForm">
+            <div class="row mb20">
+                <label for="" class="col-md-3 add-lable p0 tr mt5">标题名称</label>
+                <div class="col-md-7">
+                    <input type="text" class="f14 radius5 bdc pct100 p5" ng-model="addArt.title" name="title" required>
+                </div>
+            </div>
+            <div class="row mb20">
+                <label for="" class="col-md-3 add-lable p0 tr mt5">类型</label>
+                <div class="col-md-7">
+                    <select name="type" id="" class="radius5 bdc w160 mr30 p5" ng-model="addArt.type">
+                        <option>全部</option>
+                        <option value="0">首页Banner</option>
+                        <option value="1">找职位Banner</option>
+                        <option value="2">找精英</option>
+                        <option value="3">行业大图</option>
+                    </select>
+                    <select name="industry" id="" class="radius5 bdc w160 mt5 p5" ng-model="addArt.industry" ng-if="addArt.type==3">
+                        <option value="">请选择</option>
+                        <option value="0">移动互联网</option>
+                        <option value="1">电子商务</option>
+                        <option value="2">企业服务</option>
+                        <option value="3">O2O</option>
+                        <option value="4">教育</option>
+                        <option value="5">金融</option>
+                        <option value="6">游戏</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb20">
+                <label for="" class="col-md-3 add-lable p0 tr mt5">说明</label>
+                <div class="col-md-7">
+                    <!-- <input type="text" class="f14 radius5 bdc pct100 p5" ng-model="addArt.content" name="content"
+                        required> -->
+                    <div id="editor" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb20">
+                <label for="" class="col-md-3 add-lable p0 tr mt5">跳转链接</label>
+                <div class="col-md-7">
+                    <input type="text" class="f14 radius5 bdc pct100 p5" ng-model="addArt.url" name="url" required>
+                </div>
+            </div>
+            <div class="row mb20">
+                <label for="" class="col-md-3 add-lable p0 tr mt5">配图</label>
+                <div class="col-md-7">
+                    <input type="file" name="file" id="file" ng-model="addArt.img" accept="image/png, image/jpeg, image/gif, image/jpg"
+                        ng-hide="true" nv-file-select uploader="uploader" ng-click="clearItem()">
+                    <label for="file" class="btn btn-primary f14" ng-click="uploader.queue.remove()">上传图片</label>
+                </div>
+            </div>
+            <div class="row mb20" ng-show="imageSrc">
+                <div for="" class="col-md-3">
+                    <!-- 预览图片 -->
+                </div>
+                <div class="col-md-7">
+                    <img ng-src="{{ imageSrc }}" ng-click="changePic($event)" alt="加载失败" class="add-img">
+                </div>
+            </div>
+            <!-- 黑盒子 -->
+            <div id="js-imgview-mask" class="imgview-mask" style="display: none;" ng-click="closePic()">
+                <!-- 显示的图片 -->
+                <div id="js-imgview" class="show-img">
+                    <img id="bigimage" ng-click="closePic()">
+                </div>
+            </div>
+
+            <div class="row mb20">
+                <div for="" class="col-xl-3">
+                    <!-- 后面表格 -->
+                </div>
+                <div class="col-xl-7">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>图片名</th>
+                                <th>文件大小</th>
+                                <th>进度</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td>{{item.file.name}}</td>
+                                <td>{{item.file.size}} kb</td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                            aria-valuemin="0" aria-valuemax="100" ng-style="{ 'width': item.progress + '%' }"></div>
+                                    </div>
+                                </td>
+                                <td>{{imageUp}}</td>
+                                <td class="btn-group btn-group-xs" nowrap>
+                                    <button type="button" class="btn btn-success btn-xs f12" ng-click="item.upload()"
+                                        ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span> 上传
+                                    </button>
+                                    <!-- <button type="button" class="btn btn-warning btn-xs f12" ng-click="item.cancel()"
+                                        ng-disabled="!item.isUploading">
+                                        <span class="glyphicon glyphicon-ban-circle"></span> 取消
+                                    </button> -->
+                                    <button type="button" class="btn btn-danger btn-xs f12" ng-click="item.remove();removeImg()">
+                                        <span class="glyphicon glyphicon-trash"></span> 删除
+                                    </button>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mb20">
+                <div for="" class="col-md-3"></div>
+                <div class="col-md-9">
+                    <button type="button" class="btn btn-success" ng-disabled=addForm.$invalid ng-click="upLoad(2)">立即上线</button>
+                    <button type="button" class="btn btn-info" ng-disabled=addForm.$invalid ng-click="upLoad(1)">保存草稿</button>
+                    <button type="button" class="btn btn-secondary  ml30" ng-click="cancel()">取消</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

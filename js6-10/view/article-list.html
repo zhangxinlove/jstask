@@ -1,11 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid article-container">
     <!-- 顶部搜索表单 -->
-    <form action="" class="row p15 bdc m10 radius5">
+    <form action="" class="row p15 bdc m10 radius5 article-row">
         <div class="col-sm-6 col-xl-4 mb5">
             <div class="row">
                 <label for="" class="col-sm-4 top-lable p0 tr mt5">创建时间</label>
                 <div class="col-sm-8">
-                    <input type="text" class="f14 radius5 bdc pct100 pt5 pb5">
+                    <input type="text" class="f14 radius5 bdc pct100 p5" id="startTime" placeholder="起始更新时间">
                 </div>
             </div>
         </div>
@@ -13,7 +13,7 @@
             <div class="row">
                 <label for="" class="col-sm-4 top-lable p0 tr mt5">—</label>
                 <div class="col-sm-8">
-                    <input type="text" class="f14 radius5 bdc pct100 pt5 pb5">
+                    <input type="text" class="f14 radius5 bdc pct100 p5" id="endTime" placeholder="终止更新时间">
                 </div>
             </div>
         </div>
@@ -21,10 +21,10 @@
             <div class="row">
                 <label for="" class="col-sm-4 top-lable p0 tr mt5">状态</label>
                 <div class="col-sm-8">
-                    <select name="" id="" class="radius5 bdc pct100 pt5 pb5">
+                    <select ng-model="status" name="" id="" class="radius5 bdc pct100 p5">
                         <option value="">全部</option>
-                        <option value="">草稿</option>
-                        <option value="">上线</option>
+                        <option value="1">草稿</option>
+                        <option value="2">上线</option>
                     </select>
                 </div>
             </div>
@@ -33,30 +33,29 @@
             <div class="row">
                 <label for="" class="col-sm-4 top-lable p0 tr mt5">类型</label>
                 <div class="col-sm-8">
-                    <select name="" id="" class="radius5 bdc pct100 pt5 pb5">
+                    <select ng-model="type" name="" id="" class="radius5 bdc pct100 p5">
                         <option value="">全部</option>
-                        <option value="">首页Banner</option>
-                        <option value="">找职位Banner</option>
-                        <option value="">找精英</option>
-                        <option value="">行业大图</option>
+                        <option value="0">首页Banner</option>
+                        <option value="1">找职位Banner</option>
+                        <option value="2">找精英</option>
+                        <option value="3">行业大图</option>
                     </select>
                 </div>
             </div>
         </div>
         <div class="col-12 mt15 tr">
-            <button type="button" value="搜索" class="btn btn-success f14">搜索</button>
-            <button type="button" value="重置" class="btn btn-danger f14">重置</button>
+            <button type="button" value="搜索" class="btn btn-success f14" ng-click="search(type,status)">搜索</button>
+            <button type="button" value="重置" class="btn btn-danger f14" ng-click="resetting()">重置</button>
         </div>
     </form>
 
     <!-- 下面列表 -->
-    <div class="row  p15 bdc m10 radius5">
-        
-        <div class="table-responsive radius5 ovh">
-                <div class="table-head bgblue pct100 flexbc p15">
-                        <span class="wh">Aticle列表</span> 
-                        <button class="btn btn-success" >新增</button>
-                    </div>
+    <div class="row  p15 bdc m10 radius5 article-row">
+        <div class="table-responsive radius5">
+            <div class="table-head bgblue pct100 flexbc p15">
+                <span class="wh b">Aticle列表</span>
+                <button class="btn btn-success" ui-sref="background.add-article">新增</button>
+            </div>
             <table class="table table-bordered table-hover article-all f14">
                 <thead class="thead-light">
                     <tr>
@@ -72,9 +71,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="x in articleList">
+                    <tr ng-repeat="x in articleList | orderBy:'-id'">
                         <td>{{ x.id }}</td>
-                        <td><img src="{{ x.img }}" width="50" height="50" alt=""></td>
+                        <td><img ng-src="{{ x.img }}" width="50" height="50" alt=""></td>
                         <td>{{ x.title }}</td>
                         <td>{{ x.type | filterType }}</td>
                         <td>
@@ -88,15 +87,19 @@
                         <td>{{ x.author }}</td>
                         <td>{{ x.status | filterStatus }}</td>
                         <td>
-                            <button class="btn btn-warning f14">上线</button>
-                            <button class="btn btn-success f14">编辑</button>
-                            <button class="btn btn-danger f14">删除</button>
+                            <button class="btn btn-warning f14 wh" ng-class="{true : 'background gray',false : '' }[x.status==2]"
+                                ng-click="changeStatus(x.id,x.status)">
+                                {{ x.status | filterUnStates }}
+                            </button>
+                            <button class="btn btn-success f14" ui-sref="background.add-article({id:x.id})">编辑</button>
+                            <button class="btn btn-danger f14" ng-click="delete(x.id)">删除</button>
                         </td>
                         <!-- <td>说明{{ x.content }}</td> -->
                         <!-- <td>链接{{ x.url }}</td> -->
                     </tr>
                 </tbody>
             </table>
+            <div paging></div>
         </div>
     </div>
 </div>

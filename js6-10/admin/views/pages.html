@@ -1,0 +1,11 @@
+<ul class="paging">
+    <span class="m10">每页显示<input type="number" ng-model="listSize">条</span>
+    <button class="btn" ng-click="changePage('first')">首页</button>
+    <button class="btn" ng-click="changePage('-1')">上一页</button>
+    <a ng-repeat="item in range" ng-class="{true:'check'}[curr==item]" ng-click="clickPage()">{{item}}</a>
+    <button class="btn" ng-click="changePage('+1')">下一页</button>
+    <button class="btn" ng-click="changePage('end')">尾页</button>
+    <span class="m10">一共{{all}}页</span>
+    <span class="m10">跳转到<input type="number" value="" ng-model="jumpPage">页</span>
+    <button class="btn" ng-click="jump()">确定</button>
+</ul>
