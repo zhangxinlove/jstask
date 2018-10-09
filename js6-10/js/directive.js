@@ -1,6 +1,6 @@
 // 分页自定义指令
 myApp
-    .directive("paging", function ($stateParams) {
+    .directive("paging", function ($state) {
         return {
             //restrict 指令在DOM中可以何种形式被引用或声明
             // E（ 元素） < my - directive > < /my-directive> 
@@ -40,6 +40,7 @@ myApp
             // （1）当scope设置为true时，会从父作用域继承并创建一个新的作用域对象。
             // （2） 默认为false，并不会创建新的作用域对象，直接使用父scope。
             // （3）设置为{}，表示隔离作用域，指令的 模板就无法访问外部作用域了
+            // scope: {paging: "="},
             scope: false,
 
 
@@ -67,21 +68,30 @@ myApp
             // require: String,
 
 
-            
-            link: function (scope, iElement, iAttrs) {
-                console.log('scope.paging',scope.paging.total)
+
+            link: function (scope) {
+                // console.log($state)
+
+                // console.log('分页数据',scope.paging)
                 new Page({
                     id: 'pagination',
-                    pageTotal: 50, //必填,总页数
-                    pageAmount: 10,  //每页多少条
-                    dataTotal: 500, //总共多少条数据
-                    curPage:1, //初始页码,不填默认为1
-                    pageSize: 5, //分页个数,不填默认为5
-                    showPageTotalFlag:true, //是否显示数据统计,不填默认不显示
-                    showSkipInputFlag:true, //是否支持跳转,不填默认不显示
+                    pageTotal: Math.ceil(scope.paging.total / scope.paging.size), //必填,总页数
+                    pageAmount: 10, //每页多少条
+                    dataTotal: scope.paging.total, //总共多少条数据
+                    curPage: $state.params.page, //初始页码,不填默认为1
+                    pageSize: scope.paging.size, //分页个数,不填默认为5
+                    showPageTotalFlag: true, //是否显示数据统计,不填默认不显示
+                    showSkipInputFlag: true, //是否支持跳转,不填默认不显示
                     getPage: function (page) {
                         //获取当前页数
-                       console.log(page);
+                        // console.log(page);
+                        $state.go(
+                            "background.article-list", {
+                                page: page
+                            }, {
+                                reload: true
+                            });
+
                     }
                 })
             },

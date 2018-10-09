@@ -14,8 +14,8 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
         // console.log("测试：", )
         $scope.articleList = response.data.data.articleList;
         $scope.paging = response.data.data;
-        console.log($scope.paging)
-        console.log("请求列表成功：", $scope.articleList)
+        // console.log($scope.paging)
+        // console.log("请求列表成功：", $scope.articleList)
     }, function errorCallback(response) {
         console.log("请求列表失败：", response)
     })
@@ -23,7 +23,7 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
     // 分页
 
     // 搜索后页面，渲染各选项
-    console.log($stateParams)
+    // console.log($stateParams)
     $scope.type = $stateParams.type;
     $scope.status = $stateParams.status;
     // 时间插件
@@ -41,7 +41,7 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
             // console.log(value); //得到日期生成的值，如：2017-08-18
             // console.log(new Date(Date.parse(value.replace(/-/g, "/"))).getTime());
             $scope.start = value;
-            console.log('$scope.start', $scope.start)
+            // console.log('$scope.start', $scope.start)
             $scope.startAt = new Date(Date.parse(value.replace(/-/g, "/"))).getTime();
             // console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
             // console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
@@ -79,7 +79,7 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
     $scope.search = function () {
         // console.log('type', $scope.type)
         // console.log('status', $scope.status)
-        console.log($scope.start)
+        // console.log($scope.start)
         $state.go(
             "background.article-list", {
                 page: 1,
@@ -91,8 +91,7 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
                 end: $scope.end
             }, {
                 reload: true
-            }
-        );
+            });
     }
     // 时间戳转为显示时间
 
@@ -103,10 +102,10 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
 
     // 上下线按钮
     $scope.changeStatus = function (listId, listStatus) {
-        console.log(listId, listStatus)
+        // console.log(listId, listStatus)
         // 三元运算修改状态
         listStatus == 1 ? listStatus = '2' : listStatus = '1';
-        console.log(listId, listStatus)
+        // console.log(listId, listStatus)
         $http({
             method: "PUT",
             url: "/carrots-admin-ajax/a/u/article/status",
