@@ -72,7 +72,7 @@ myApp.controller("addArticleCtrl", function ($scope, $http, $state, $stateParams
             }).then(function successCallback(response) {
                 if (response.data.code === 0) {
                     if (x == 1) {
-                        alert("村委草稿");
+                        alert("存为草稿");
                     } else {
                         alert("新增成功");
                     };

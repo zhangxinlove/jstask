@@ -26,6 +26,9 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
     // console.log($stateParams)
     $scope.type = $stateParams.type;
     $scope.status = $stateParams.status;
+
+    // $scope.startAt = ($stateParams.start)?$stateParams.start:new Date(Date.parse($scope.start.replace(/-/g, "/"))).getTime();
+    // $scope.endAt = ($stateParams.end)?$stateParams.end:new Date(Date.parse($scope.end.replace(/-/g, "/"))).getTime() + 86400000;
     // 时间插件
     //起始时间
     laydate.render({
@@ -41,8 +44,9 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
             // console.log(value); //得到日期生成的值，如：2017-08-18
             // console.log(new Date(Date.parse(value.replace(/-/g, "/"))).getTime());
             $scope.start = value;
+            $scope.startAt = new Date(Date.parse($scope.start.replace(/-/g, "/"))).getTime();
+            // console.log($scope.startAt)
             // console.log('$scope.start', $scope.start)
-            $scope.startAt = new Date(Date.parse(value.replace(/-/g, "/"))).getTime();
             // console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
             // console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
         },
@@ -71,7 +75,7 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
             // console.log(value); 
             // console.log(new Date(Date.parse(value.replace(/-/g, "/"))).getTime());
             $scope.end = value;
-            $scope.endAt = new Date(Date.parse(value.replace(/-/g, "/"))).getTime() + 86400000;
+            $scope.endAt = value?new Date(Date.parse($scope.end.replace(/-/g, "/"))).getTime() + 86400000:undefined;
             // console.log(date); 
         }
     });
@@ -85,10 +89,10 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
                 page: 1,
                 status: $scope.status,
                 type: $scope.type,
-                startAt: $scope.startAt, //上传Unix时间
-                endAt: $scope.endAt,
-                start: $scope.start, //显示时间
-                end: $scope.end
+                startAt: $scope.startAt?$scope.startAt:$stateParams.startAt, //上传Unix时间
+                endAt: $scope.endAt?$scope.endAt:$stateParams.endAt,
+                start: $scope.start?$scope.start:$stateParams.start, //显示时间
+                end: $scope.end?$scope.end:$stateParams.end
             }, {
                 reload: true
             });
@@ -97,7 +101,18 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
 
     // 重置按钮
     $scope.resetting = function () {
-        window.location.reload();
+        $state.go(
+            "background.article-list", {
+                page: 1,
+                status: undefined,
+                type: undefined,
+                startAt: undefined, 
+                endAt: undefined,
+                start: undefined, 
+                end: undefined
+            }, {
+                reload: true
+            });
     }
 
     // 上下线按钮
@@ -133,7 +148,7 @@ myApp.controller("articleListCtrl", function ($scope, $http, $state, $stateParam
             $http.delete('carrots-admin-ajax/a/u/article/' + listId)
                 .then(function () {
                     alert("删除成功!");
-                    location.reload();
+                    $scope.search();
                 })
         }
     }
