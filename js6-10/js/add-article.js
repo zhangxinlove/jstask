@@ -50,7 +50,7 @@ myApp.controller("addArticleCtrl", function ($scope, $http, $state, $stateParams
                     // 传参判断是否上线或草稿
                     if (x == 1) {
                         alert("村委草稿");
-                    } else if(x == 2){
+                    } else if (x == 2) {
                         alert("立即上线");
                     };
                     $state.go("background.article-list")
@@ -88,7 +88,6 @@ myApp.controller("addArticleCtrl", function ($scope, $http, $state, $stateParams
     }
 
 
-
     //点击图片时放大显示图片
     $scope.changePic = function ($event) {
         var img = $event.srcElement || $event.target;
@@ -112,11 +111,14 @@ myApp.controller("addArticleCtrl", function ($scope, $http, $state, $stateParams
     var uploader = $scope.uploader = new FileUploader(); /*实例化一个FileUploader对象*/
     uploader.url = '/carrots-admin-ajax/a/u/img/task'; /*以下是设置了两个必须的属性*/
     uploader.queue = [];
-    // 避免重复上传
-    $scope.clearItem = function () {
-        $scope.uploader.clearQueue();
-    };
 
+    // 清除上传状态符号
+    $scope.clearAll = function () {
+        $scope.imageUp = "";
+        $scope.imageSrc = undefined;
+        scope.uploader.clearQueue();
+    }
+    
     // 删除清除预览图片
     $scope.removeImg = function () {
         $scope.imageSrc = undefined;
@@ -127,25 +129,30 @@ myApp.controller("addArticleCtrl", function ($scope, $http, $state, $stateParams
         console.info('onWhenAddingFileFailed', item, filter, options);
     };
     uploader.onAfterAddingFile = function (fileItem) {
-        //   console.info('onAfterAddingFile', fileItem);
+        console.info('onAfterAddingFile', fileItem);
+        // if(){
+        //     uploader.removeFromQueue(0)
+        // }
     };
     uploader.onAfterAddingAll = function (addedFileItems) {
-        //   console.info('onAfterAddingAll', addedFileItems);
+        console.info('onAfterAddingAll', addedFileItems);
     };
     uploader.onBeforeUploadItem = function (item) {
-        //   console.info('onBeforeUploadItem', item);
-
+        console.info('onBeforeUploadItem', item);
     };
     uploader.onProgressItem = function (fileItem, progress) {
-        console.info('onProgressItem', fileItem, progress);
+        // console.info('onProgressItem', fileItem, progress);
         $scope.imageUp = (progress == 100) ? "√" : "×";
+        // if($scope.imageSrc=""){
+        //     $scope.imageUp = ""
+        // }
     };
     uploader.onProgressAll = function (progress) {
-        //   console.info('onProgressAll', progress);
+        console.info('onProgressAll', progress);
     };
     uploader.onSuccessItem = function (fileItem, response, status, headers) {
         // alert(response)
-        //   console.info('onSuccessItem', response.data.url);
+        console.info('onSuccessItem', response);
         $scope.imageSrc = response.data.url;
     };
     uploader.onErrorItem = function (fileItem, response, status, headers) {

@@ -52,8 +52,8 @@
                 <label for="" class="col-md-3 add-lable p0 tr mt5">配图</label>
                 <div class="col-md-7">
                     <input type="file" name="file" id="file" ng-model="addArt.img" accept="image/png, image/jpeg, image/gif, image/jpg"
-                        ng-hide="true" nv-file-select uploader="uploader" ng-click="clearItem()">
-                    <label for="file" class="btn btn-primary f14" ng-click="uploader.queue.remove()">上传图片</label>
+                        ng-hide="true" nv-file-select uploader="uploader">
+                    <label for="file" class="btn btn-primary f14" ng-click="clearAll()">上传图片</label>
                 </div>
             </div>
             <div class="row mb20" ng-show="imageSrc">
