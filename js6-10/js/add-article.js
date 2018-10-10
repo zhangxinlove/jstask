@@ -116,9 +116,10 @@ myApp.controller("addArticleCtrl", function ($scope, $http, $state, $stateParams
     $scope.clearAll = function () {
         $scope.imageUp = "";
         $scope.imageSrc = undefined;
-        scope.uploader.clearQueue();
+        $scope.uploader.clearQueue();
     }
-    
+    // 选择一张图片，点击取消，再点击按钮，就无法选择同一张图片了，只能选择其他图片。解决办法。
+    FileUploader.FileSelect.prototype.isEmptyAfterSelection = function () {return true;};
     // 删除清除预览图片
     $scope.removeImg = function () {
         $scope.imageSrc = undefined;
