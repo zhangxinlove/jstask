@@ -1,0 +1,44 @@
+<view class='title'>
+  试试什么职业最适合你
+</view>
+<view class='list'>
+    <picker bindchange="bindPickerChange" value="{{education}}" range="{{array1}}">
+      
+      <view class='content'>
+        
+        <text class='nature'>学</text>历：<text class='val'>{{array1[education]}} </text>
+      </view>
+    </picker>
+    
+    <picker bindchange="sexChange" value="{{sex}}" range="{{array2}}">
+      <view class='content'>
+        <text class='nature'>性</text>别：<text class='val'>{{array2[sex]}}       </text>
+      </view>
+    </picker>
+
+    <picker bindchange="ageChange" value="{{age}}" range="{{array3}}">
+      <view class='content'>
+        <text class='nature'>年</text>龄：<text class='val'>{{array3[age]}}       </text>
+      </view>
+    </picker>
+
+    <picker bindchange="basicsChange" value="{{base}}" range="{{array4}}">
+      <view class='content'>
+        <text class='nature'>基</text>础：<text class='val'>{{array4[base]}}</text>
+      </view>
+    </picker>
+
+    <picker bindchange="majorChange" value="{{major}}" range="{{array5}}">
+      <view class='content'>
+        <text class='nature'>专</text>业：<text class='val'>{{array5[major]}}</text>
+      </view>
+    </picker>
+
+    <picker bindchange="logicChange" value="{{logic}}" range="{{array6}}">
+      <view class='content content1'>
+        <text class='nature'>逻</text>辑：<text class='val'>{{array6[logic]}}</text>
+      </view>
+    </picker>
+  </view>
+  <button type="primary" bindtap="btnclick"> 选好了，请查看 </button>
+ 

@@ -35,7 +35,7 @@ myApp.controller("loginCtrl", function ($scope, $http, $state) {
                 $scope.loginMessage = response.data.message;
             }
         }, function errorCallback(response) {
-            console.log("登录请求失败");
+            console.log(response);
             $scope.loginMessage = "服务器连接失败";
         });
     }

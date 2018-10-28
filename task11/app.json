@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/move/move",
+    "pages/occupation/occupation"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f0f0f0",
+     "navigationBarTitleText": "weChat",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#000"
+  }
+}

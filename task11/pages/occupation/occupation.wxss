@@ -1,0 +1,77 @@
+/* pages/occupation/occupation.wxss */
+
+view , page {
+  padding: 0px;
+  margin: 0px;
+}
+.title{
+display: flex;
+font-size: 16px;
+justify-content:center;
+margin: 4px 0 6px 0;
+}
+.page {
+  height: 100%;
+}
+
+.navbar {
+    display: flex;
+    position: absolute;
+    z-index: 500;
+    top: 40px;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.navbar__item {
+    position: relative;
+    display: block;
+    flex: 1;
+    padding: 10rpx 0;
+    text-align: center;
+    font-size: 0;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.navbar__item_on {
+    color: #16B13A;
+}
+
+.navbar__slider {
+    position: absolute;
+    display: block;
+    content: " ";
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: #16B13A;
+    transition: transform .3s;
+}
+
+.navbar__title{
+    display: inline-block;
+    max-width: 8em;
+    text-align: center;
+    font-size: 15px;
+}
+
+swiper {
+  height: 100%;
+}
+
+swiper-item{
+  width: 100%;
+  padding-top: 20rpx;
+  text-align: center;
+}
+swiper-item view{
+  margin-left: 12px;
+  padding: 10px 0;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+swiper-item view text{
+  margin-right: 30px;
+}

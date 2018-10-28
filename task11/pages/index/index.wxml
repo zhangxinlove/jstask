@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <view>试试你最适合什么职业</view>
+</view>

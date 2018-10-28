@@ -9,7 +9,7 @@ myApp.controller("addArticleCtrl", function ($scope, $http, $state, $stateParams
                 $scope.addTop = "编辑Article";
                 $scope.addArt = response.data.data.article;
                 $scope.imageSrc = $scope.addArt.img;
-                console.log('编辑页：', $scope.addArt);
+                // console.log('编辑页：', $scope.addArt);
                 // 编辑页下拉框灭有默认选中，转为字符串
                 $scope.addArt.type = String($scope.addArt.type);
                 $scope.addArt.industry = String($scope.addArt.industry);
@@ -38,13 +38,42 @@ myApp.controller("addArticleCtrl", function ($scope, $http, $state, $stateParams
         $scope.article.content = editor.txt.html();
         // 有id，编辑页
         if ($stateParams.id) {
+            // console.log('jQuery',$scope.article)
+            // $.ajax({
+            //     url: '/carrots-admin-ajax/a/u/article/' + $state.params.id,
+            //     type: "PUT",
+            //     data:$scope.article,
+            //     cache:false,
+            //     dataType: "json",
+            //     success: function(response){
+            //         console.log(response)
+            //             if (response.code == 0) {
+            //                 // 传参判断是否上线或草稿
+            //                 if (x == 1) {
+            //                     alert("村委草稿");
+            //                 } else if (x == 2) {
+            //                     alert("立即上线");
+            //                 };
+            //                 $state.go("background.article-list")
+            //             } else {
+            //                 alert("保存失败！")
+            //             };
+            //      },
+            //      error:function(err){
+            //      }
+            //    });
+
+            // console.log('angular', $scope.article)
             $http({
                 method: 'PUT',
                 url: '/carrots-admin-ajax/a/u/article/' + $state.params.id,
                 headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
+                    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
                 },
-                params: $scope.article
+                // params: $scope.article,
+                // 序列化为字符串
+                data: $.param($scope.article),
+
             }).then(function successCallback(response) {
                 if (response.data.code == 0) {
                     // 传参判断是否上线或草稿
@@ -119,7 +148,9 @@ myApp.controller("addArticleCtrl", function ($scope, $http, $state, $stateParams
         $scope.uploader.clearQueue();
     }
     // 选择一张图片，点击取消，再点击按钮，就无法选择同一张图片了，只能选择其他图片。解决办法。
-    FileUploader.FileSelect.prototype.isEmptyAfterSelection = function () {return true;};
+    FileUploader.FileSelect.prototype.isEmptyAfterSelection = function () {
+        return true;
+    };
     // 删除清除预览图片
     $scope.removeImg = function () {
         $scope.imageSrc = undefined;
