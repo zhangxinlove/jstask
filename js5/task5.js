@@ -15,8 +15,8 @@ btn.onclick = function () {
             var data = xmlhttp.responseText;
             console.log("data字符串:",data);
             data = JSON.parse(data);
-            // if (data.message == "success"){
-            if (data.code == 0) {
+            if (data.message == "success"){
+            // if (data.code == 0) {
                 location.assign("http://dev.admin.carrots.ptteng.com/#/login"); //跳转网页
                 // console.log("data:",data);
             } else {
